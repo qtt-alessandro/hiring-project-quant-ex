@@ -39,7 +39,7 @@ python main.py backtest DK1 --time-from "2026-01-15 00:00" \
 
 ---
 
-## 🔬 Available Methods
+## Available Methods
 
 | Method | Description |
 |--------|-------------|
