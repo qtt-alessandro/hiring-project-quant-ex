@@ -59,7 +59,7 @@ def plot_residual_diagnostics(results: dict, methods: list = None, max_lags: int
         axes[0, idx].hist(residuals, bins=50, edgecolor='black', alpha=0.7)
         axes[0, idx].set_xlabel('Residuals', fontsize=11)
         axes[0, idx].set_ylabel('Frequency', fontsize=11)
-        axes[0, idx].set_title(f'{method.capitalize()} - Residual Distribution', fontsize=12)
+        axes[0, idx].set_title(f'{method.capitalize()}', fontsize=12)
         axes[0, idx].axvline(x=0, color='red', linestyle='--', linewidth=2)
         axes[0, idx].grid(True, alpha=0.3)
         
@@ -75,7 +75,7 @@ def plot_residual_diagnostics(results: dict, methods: list = None, max_lags: int
         plot_func(residuals.dropna(), lags=max_lags, ax=axes[1, idx], alpha=0.05)
         axes[1, idx].set_xlabel('Lag', fontsize=11)
         axes[1, idx].set_ylabel(f'{corr_type}', fontsize=11)
-        axes[1, idx].set_title(f'{method.capitalize()} - Residual {corr_type}', fontsize=12)
+        axes[1, idx].set_title(f'{method.capitalize()}', fontsize=10)
         axes[1, idx].grid(True, alpha=0.3)
     
     plt.tight_layout()
@@ -124,7 +124,7 @@ def plot_forecast_comparison(results: dict, methods: list = None, n_points: int 
     axes[0].plot(closest['delivery_start'], closest['target'], 
                  'k-', linewidth=2, label='Actual', alpha=0.8)
     axes[0].set_ylabel('aFRR Activation', fontsize=11)
-    axes[0].set_title(f'Predictions {time_to_delivery} Before Delivery (First {n_points} points)', fontsize=12)
+    axes[0].set_title(f'Predictions {time_to_delivery} Before Delivery', fontsize=12)
     axes[0].legend()
     axes[0].grid(True, alpha=0.3)
     axes[0].tick_params(axis='x', rotation=45)
