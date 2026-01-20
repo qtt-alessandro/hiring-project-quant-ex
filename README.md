@@ -1,19 +1,21 @@
 # aFRR Activation Forecasting
 
-Forecasting system for Danish aFRR (automatic Frequency Restoration Reserve) activations. Predicts the next 8 settlement periods (2 hours) with 15-minute granularity.
+Forecasting system for Danish aFRR (automatic Frequency Restoration Reserve) activations. Predicts the next 8 settlement periods with 15-minute granularity.
 
 ---
 
 ## Project Structure
 
 ```
-afrr-forecasting/
-├── main.py                 
+├── main.py
 ├── models/
 │   ├── models.py           # 6 forecasting (simple) models
-│   └── utils.py            # plotting functions
+│   └── utils.py            # plotting functions  
+├── examples/
+│   └── persistence.py
 ├── plots/                  # forecasts and residuals diagnostics
-├── requirements.txt
+│   ├── forecast_comparison.png
+│   └── residual_diagnostics.png
 └── README.md
 ```
 
@@ -34,7 +36,7 @@ python main.py backtest DK1 --time-from "2026-01-15 00:00" --models ridge
 **Compare Methods:**
 ```bash
 python main.py backtest DK1 --time-from "2026-01-15 00:00" \
-  --models "naive_mean,ridge,huber"
+  --models "naive_mean,naive_median,quantile_weighted,rolling_median,ridge,huber"
 ```
 
 ---
