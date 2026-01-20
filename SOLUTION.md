@@ -60,7 +60,7 @@ python main.py backtest DK1 --time-from "2026-01-15 00:00" \
 
 ---
 
-## 🔧 Key Features
+## Key Features
 
 ✅ Multiple forecasting methods  
 ✅ Walk-forward backtesting  
